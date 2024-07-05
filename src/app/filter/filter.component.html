@@ -1,0 +1,46 @@
+<div class="filters">
+    <h3>FILTERS</h3>
+    <div class="filter-item">
+      <!-- <label for="movie">Movie Name</label> -->
+      <select id="movie" >
+        <option value="all">Movie Name</option>
+        <option  *ngFor="let film of filmNames ">{{film}}</option>
+        <!-- Add options dynamically here -->
+      </select>
+    </div>
+    <div class="filter-item">
+      
+      <!-- <label for="species">Species</label> -->
+      <select id="species">
+        <!-- Add options dynamically here -->
+        <option value="all">Species</option>
+        <option  *ngFor="let film of species ">{{film}}</option>
+      </select>
+    </div>
+    <div class="filter-item">
+      <!-- <label for="vehicle">Vehicle</label> -->
+      <select id="vehicle">
+        <option value="all">Vehicle</option>
+        <option *ngFor="let vehilce of vehicleNames">{{vehilce}}</option>
+        <!-- Add options dynamically here -->
+      </select>
+    </div>
+    <div class="filter-item">
+      <!-- <label for="starship">Star Ships</label> -->
+      <select id="starship">
+        <!-- Add options dynamically here -->
+        <option value="all">Star Ships</option>
+         <option *ngFor="let starShip of starshipNames">{{starShip}}</option>
+      </select>
+    </div>
+    <div class="filter-item" *ngIf="character">
+      <!-- <label for="birth-year">Birth Year</label> -->
+      <select id="birth-year">
+        <option value="all">ALL</option>
+        <option [value]="character?.birth_year">{{ character?.birth_year }}</option>
+        <!-- Add more options dynamically here -->
+      </select>
+    </div>
+    <button (click)="search()">SEARCH</button>
+  </div>
+  

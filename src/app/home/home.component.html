@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="header">
+      <h1>STAR WARS</h1>
+      <span class="project-name">THE SWAPI PROJECT</span>
+    </div>
+    <div class="content">
+      <app-filter></app-filter>
+      <div class="results">
+        <h2>SEARCH RESULTS</h2>
+        <p>(By Default this table will have all data)</p>
+        <table>
+          <thead>
+            <tr >
+              <th>Sl No.</th>
+              <th>Character Name</th>
+              <th>Species</th>
+              <th>Birth Year</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let character of charcterDetails[0].charcters; let index = index">
+            <!-- Add rows dynamically here -->
+             <td>{{index}}</td>
+             <td>{{character }}</td>
+          </tbody>
+        </table>
+        <div class="pagination">
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

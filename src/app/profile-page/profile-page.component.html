@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="header">
+      <h1>STAR WARS</h1>
+      <span class="project-name">THE SWAPI PROJECT</span>
+    </div>
+    <div class="content">
+      <div class="character-details">
+        <img src="assets/placeholder.png" alt="Character Image" class="character-image">
+        <div class="details">
+          <p><strong>Name:</strong> {{ character?.name }}</p>
+          <p><strong>Born:</strong> {{ character?.birth_year }}</p>
+          <p><strong>Gender:</strong> {{ character?.gender }}</p>
+          <p><strong>Height:</strong> {{ character?.height }} cm</p>
+          <p><strong>Weight:</strong> {{ character?.mass }} kg</p>
+          <p><strong>Created:</strong> {{ character?.created | date }}</p>
+          <p><strong>Edited:</strong> {{ character?.edited | date }}</p>
+          <p><strong>Hair color:</strong> {{ character?.hair_color }}</p>
+          <p><strong>Eye color:</strong> {{ character?.eye_color }}</p>
+          <p><strong>Skin color:</strong> {{ character?.skin_color }}</p>
+          <p><strong>Planet Name:</strong> Planet Name Placeholder</p>
+          <p><strong>Species:</strong> {{ character?.species.length > 0 ? character?.species[0] : 'Human' }}</p>
+        </div>
+      </div>
+      <div class="related-info">
+        <div class="films">
+          <h2>FILMS</h2>
+          <div  *ngFor="let film of filmNames"class="film-card">{{film}}</div>
+         
+        </div>
+        <div class="vehicles">
+          <h2>VEHICLES</h2>
+          <div *ngFor="let vehicle of vehicleNames" class="vehicle-card">{{vehicle}}</div>
+        </div>
+        <div class="starships">
+          <h2>STARSHIPS</h2>
+          <div  *ngFor="let starShip of starshipNames"class="starship-card">{{starShip}}</div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
